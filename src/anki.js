@@ -36,7 +36,7 @@ export const createModel = async () => {
     }
 
     /* This part defines the bold color. */
-    b{color: #5586cd}
+    b, strong {color: #5586cd}
 
     .hide {
       display: none;
@@ -61,8 +61,21 @@ export const createModel = async () => {
             {{furigana:furigana}}
           </div>
 
-          <div style='font-size: 14px; padding-bottom:16px;'>
+          <div style='font-size: 14px;'>
+            <i>{{tense}}</i>
+          </div>
+
+          <hr>
+
+          <div style='font-size: 18px; padding-bottom:16px;'>
             {{english}}
+          </div>
+
+          <div style='font-size: 14px;'>
+            Dict. form: {{dictionaryForm}}
+          </div>
+          <div style='font-size: 14px;'>
+            <i>{{verbType}}</i> verb
           </div>
         </div>
         `

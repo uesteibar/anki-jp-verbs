@@ -7,6 +7,8 @@ const vtype = v => godanIchidan(v) == "godan" ? VerbType.Godan : VerbType.Ichida
 
 export const verbType = godanIchidan
 
+// TODO: add exceptions like する
+
 export const negative = (verb) => {
   const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Present, negative: true })
   return kanji
@@ -58,7 +60,7 @@ export const permutate = async (verbs, conjugations) => {
         tense: conjugation.name,
         conjugation: c,
         furigana: await furigana(c),
-        verbType: verbType(v.dictionaryForm)
+        verbType: verbType(v.dictionaryForm),
       }
     }))
   }))).flat()

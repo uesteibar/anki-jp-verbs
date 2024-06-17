@@ -148,36 +148,8 @@ export const VERBS = [
     "english": "to take off (clothes)"
   },
   {
-    "dictionaryForm": "勉強する",
-    "english": "to study"
-  },
-  {
-    "dictionaryForm": "電話する",
-    "english": "to call"
-  },
-  {
-    "dictionaryForm": "練習する",
-    "english": "to practice"
-  },
-  {
-    "dictionaryForm": "料理する",
-    "english": "to cook"
-  },
-  {
-    "dictionaryForm": "掃除する",
-    "english": "to clean"
-  },
-  {
-    "dictionaryForm": "運転する",
-    "english": "to drive"
-  },
-  {
-    "dictionaryForm": "勉強する",
-    "english": "to study"
-  },
-  {
-    "dictionaryForm": "散歩する",
-    "english": "to take a walk"
+    "dictionaryForm": "する",
+    "english": "to do"
   },
   {
     "dictionaryForm": "泳ぐ",
