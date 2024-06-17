@@ -1,5 +1,5 @@
 import pkg from 'kamiya-codec';
-const {conjugate} = pkg;
+const {conjugate, conjugateAuxiliaries, verbDeconjugate} = pkg;
 
 export const negative = (verb) => {
   const [_, negative] = conjugate(verb, "Negative")
@@ -8,5 +8,10 @@ export const negative = (verb) => {
 
 export const past = (verb) => {
   const [past] = conjugate(verb, "Ta")
+  return past
+}
+
+export const pastNegative = (verb) => {
+  const [past] = conjugateAuxiliaries(verb, ["Nai"], "Ta")
   return past
 }

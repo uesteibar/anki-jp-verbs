@@ -1,14 +1,21 @@
-import { negative, past } from "./src/conjugator.js"
+import { negative, past, pastNegative } from "./src/conjugator.js"
 import { VERBS } from "./src/verbs.js"
 import Kuroshiro from "@sglkc/kuroshiro";
 import KuromojiAnalyzer from "@sglkc/kuroshiro-analyzer-kuromoji";
 
+import pkg from 'kamiya-codec';
+const {conjugate, conjugateAuxiliaries, verbDeconjugate} = pkg;
+
+console.log(verbDeconjugate("食べった", "食べる"))
+
 const NEGATIVE = { name: "Present Negative", conjugator: negative }
 const PAST = { name: "Past", conjugator: past }
+const PAST_NEGATIVE = { name: "Past Negative", conjugator: pastNegative }
 
 const conjugations = [
   NEGATIVE,
-  PAST
+  PAST,
+  PAST_NEGATIVE
 ]
 
 const kuroshiro = new Kuroshiro();
