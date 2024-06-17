@@ -1,0 +1,1 @@
+import { negative } from "./src/conjugator.js"

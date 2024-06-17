@@ -1,0 +1,17 @@
+{
+  "name": "anki-japanese-conjugations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "create-deck": "node --experimental-vm-modules ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sglkc/kuroshiro": "^1.0.1",
+    "@sglkc/kuroshiro-analyzer-kuromoji": "^1.0.1",
+    "kamiya-codec": "^4.11.0"
+  }
+}
