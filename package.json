@@ -12,6 +12,7 @@
   "dependencies": {
     "@sglkc/kuroshiro": "^1.0.1",
     "@sglkc/kuroshiro-analyzer-kuromoji": "^1.0.1",
-    "kamiya-codec": "^4.11.0"
+    "godan-ichidan": "^1.0.0-2023-04-03",
+    "jv-conjugator": "^2.2.2"
   }
 }
