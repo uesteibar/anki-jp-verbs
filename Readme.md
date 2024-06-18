@@ -2,6 +2,12 @@
 
 A handy script to generate anki cards for japanese verb conjugations.
 
+![ankideck](https://github.com/uesteibar/anki-jp-verbs/assets/7823996/7d5a2037-63f6-4bc8-b5e7-71045f771dfd)
+
+<img width="478" alt="front" src="https://github.com/uesteibar/anki-jp-verbs/assets/7823996/51d08ed7-2dae-4da3-871b-931a1a7accca">
+<img width="478" alt="back" src="https://github.com/uesteibar/anki-jp-verbs/assets/7823996/f869451f-d80e-4756-aa0a-1b77bca16c39">
+
+
 ### Installation
 
 1. Clone the repository
