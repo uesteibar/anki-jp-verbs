@@ -2,6 +2,7 @@ import { select, confirm, checkbox } from '@inquirer/prompts'
 import { VERBS } from "./src/verbs.js"
 import { getDecks, createModel, modelExists, createNote, createDeck } from "./src/anki.js";
 import {
+  PRESENT_FORMAL,
   NEGATIVE,
   PAST,
   PAST_NEGATIVE,
@@ -9,11 +10,16 @@ import {
   PAST_FORMAL,
   PAST_NEGATIVE_FORMAL,
   TE,
+  CONTINUOUS,
+  CONTINUOUS_NEGATIVE,
+  CONTINUOUS_FORMAL,
+  CONTINUOUS_FORMAL_NEGATIVE,
 } from "./src/conjugator.js";
 
 import { permutate } from "./src/conjugator.js"
 
 const FORMS = [
+  PRESENT_FORMAL,
   TE,
   NEGATIVE,
   PAST,
@@ -21,6 +27,10 @@ const FORMS = [
   NEGATIVE_FORMAL,
   PAST_FORMAL,
   PAST_NEGATIVE_FORMAL,
+  CONTINUOUS,
+  CONTINUOUS_NEGATIVE,
+  CONTINUOUS_FORMAL,
+  CONTINUOUS_FORMAL_NEGATIVE,
 ]
 
 const decks = await getDecks()
