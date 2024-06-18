@@ -30,7 +30,6 @@ cards = cards
     .map(({ value }) => value)
 
 const decks = await getDecks()
-
 const deck = await select({
   message: "📖 Select the deck to which you want to import verb form flashcards",
   choices: decks.map(d => ({
@@ -43,7 +42,7 @@ console.log(`\nImporting a total of ${cards.length} flashcards, for the followin
 ${FORMS.map(f => `\n- ${f.name}`)}
 `)
 
-let shouldContinue = await confirm({ message: `Flashcards will be added as sub-decks, one deck per verb form. Shall I proceed?` });
+let shouldContinue = await confirm({ message: `Flashcards will be added to ${deck}. Shall I proceed?` });
 if (!shouldContinue) {
   console.log("\n❌ Alrighty! Cancelling.")
   process.exit()
@@ -62,13 +61,6 @@ if (shouldCreateModel) {
 } else {
   console.log("\nModel 'jp-verb-conjugation' already exists. I'll use that.")
 }
-
-const formRunners = FORMS.map(f => {
-  return async () => createDeck(f, deck)
-})
-formRunners.reduce((p, fn) => p.then(fn), Promise.resolve())
-
-await new Promise(r => setTimeout(r, 2000));
 
 const runners = cards.map(card => {
   return async () => createNote(card, deck)

@@ -108,11 +108,9 @@ export const createDeck = async (form, parent) => {
 export const createNote = async (verb, deck) => {
   const client = new YankiConnect()
 
-  const deckName = `${deck}::${verb.tense}`
-
   await client.note.addNote({
     note: {
-      deckName: deckName,
+      deckName: deck,
       modelName: "jp-verb-conjugation",
       fields: {
         dictionaryForm: verb.dictionaryForm,
@@ -124,9 +122,9 @@ export const createNote = async (verb, deck) => {
       },
       options: {
         allowDuplicate: true,
-        duplicateScope: deckName,
+        duplicateScope: deck,
       },
-      tags: ["jp-verb-conjugations"]
+      tags: ["jp-verb-conjugations", verb.tense.replaceAll(" ", "")]
     }
   })
 }
