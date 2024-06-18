@@ -1,4 +1,4 @@
-import { select, confirm } from '@inquirer/prompts'
+import { select, confirm, checkbox } from '@inquirer/prompts'
 import { VERBS } from "./src/verbs.js"
 import { getDecks, createModel, modelExists, createNote, createDeck } from "./src/anki.js";
 import {
@@ -22,24 +22,28 @@ const FORMS = [
   PAST_FORMAL,
   PAST_NEGATIVE_FORMAL,
 ]
-let cards = await permutate(VERBS, FORMS)
-
-cards = cards
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value)
 
 const decks = await getDecks()
 const deck = await select({
-  message: "📖 Select the deck to which you want to import verb form flashcards",
+  message: "📖 Which deck do you want to import verb form flashcards to?",
   choices: decks.map(d => ({
     name: d,
     value: d,
   }))
 })
 
-console.log(`\nImporting a total of ${cards.length} flashcards, for the following forms:
-${FORMS.map(f => `\n- ${f.name}`)}
+const forms = await checkbox({
+  message: "Which verb forms do you want to import?",
+  choices: FORMS.map(f => ({name: f.name, value: f})),
+});
+
+let cards = (await permutate(VERBS, forms))
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+
+console.log(`\I will import a total of ${cards.length} flashcards, for the following forms:
+${forms.map(f => `\n- ${f.name}`)}
 `)
 
 let shouldContinue = await confirm({ message: `Flashcards will be added to ${deck}. Shall I proceed?` });
