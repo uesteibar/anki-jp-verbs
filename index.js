@@ -7,12 +7,14 @@ import {
   PAST_NEGATIVE,
   NEGATIVE_FORMAL,
   PAST_FORMAL,
-  PAST_NEGATIVE_FORMAL
+  PAST_NEGATIVE_FORMAL,
+  TE,
 } from "./src/conjugator.js";
 
 import { permutate } from "./src/conjugator.js"
 
 const FORMS = [
+  TE,
   NEGATIVE,
   PAST,
   PAST_NEGATIVE,
@@ -20,7 +22,12 @@ const FORMS = [
   PAST_FORMAL,
   PAST_NEGATIVE_FORMAL,
 ]
-const cards = await permutate(VERBS, FORMS)
+let cards = await permutate(VERBS, FORMS)
+
+cards = cards
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
 
 const decks = await getDecks()
 

@@ -4,6 +4,10 @@ export const VERBS = [
     "english": "to eat"
   },
   {
+    "dictionaryForm": "来る",
+    "english": "to come"
+  },
+  {
     "dictionaryForm": "飲む",
     "english": "to drink"
   },
