@@ -71,16 +71,8 @@ export const continuous = (verb) => {
   return te(verb) + "いる"
 }
 
-export const continuousNegative = (verb) => {
-  return te(verb) + negative("いる")
-}
-
 export const continuousFormal = (verb) => {
   return te(verb) + presentFormal("いる")
-}
-
-export const continuousFormalNegative = (verb) => {
-  return te(verb) + negativeFormal("いる")
 }
 
 export const PRESENT_FORMAL = { name: "Present - formal", conjugator: presentFormal }
@@ -92,9 +84,7 @@ export const PAST_FORMAL = { name: "Past - formal", conjugator: pastFormal }
 export const PAST_NEGATIVE_FORMAL = { name: "Past Negative - formal", conjugator: pastNegativeFormal }
 export const TE = { name: "Te Form", conjugator: te }
 export const CONTINUOUS = { name: "Present Continuous", conjugator: continuous }
-export const CONTINUOUS_NEGATIVE = { name: "Present Continuous Negative", conjugator: continuousNegative }
 export const CONTINUOUS_FORMAL = { name: "Present Continuous - formal", conjugator: continuousFormal }
-export const CONTINUOUS_FORMAL_NEGATIVE = { name: "Present Continuous Negative - formal", conjugator: continuousFormalNegative }
 
 export const permutate = async (verbs, conjugations) => {
   const kuroshiro = new Kuroshiro();
