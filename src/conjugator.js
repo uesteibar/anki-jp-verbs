@@ -83,7 +83,7 @@ export const NEGATIVE_FORMAL = { name: "Present Negative - formal", conjugator: 
 export const PAST_FORMAL = { name: "Past - formal", conjugator: pastFormal }
 export const PAST_NEGATIVE_FORMAL = { name: "Past Negative - formal", conjugator: pastNegativeFormal }
 export const TE = { name: "Te Form", conjugator: te }
-export const CONTINUOUS = { name: "Present Continuous", conjugator: continuous }
+export const CONTINUOUS = { name: "Present Continuous - informal", conjugator: continuous }
 export const CONTINUOUS_FORMAL = { name: "Present Continuous - formal", conjugator: continuousFormal }
 
 export const permutate = async (verbs, conjugations) => {

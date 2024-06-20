@@ -14,6 +14,7 @@
     "@sglkc/kuroshiro": "^1.0.1",
     "@sglkc/kuroshiro-analyzer-kuromoji": "^1.0.1",
     "godan-ichidan": "^1.0.0-2023-04-03",
+    "jmdict-simplified-node": "^1.1.2",
     "jv-conjugator": "^2.2.2",
     "yanki-connect": "^1.0.5"
   }

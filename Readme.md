@@ -11,11 +11,12 @@ A handy script to generate anki cards for japanese verb conjugations.
 ### Installation
 
 1. Clone the repository
-2. Install dependencies
+2. Download [jmdict-eng-3.5.0.json.zip](https://github.com/scriptin/jmdict-simplified/releases/tag/3.5.0+20240617121821), unzip and place json into `data/`
+3. Install dependencies
     ```
     npm install
     ```
-3. Install Anki and Anki-Connect
+4. Install Anki and Anki-Connect
 
 
 ### Running
@@ -30,6 +31,8 @@ npm run create-deck
 
 And select your preferred options.
 
+You can add your own verbs in `src/verbs.js`
+
 ### Currently supported forms
 
 - [x] Present formal (食べます)
@@ -41,10 +44,10 @@ And select your preferred options.
 - [x] Past formal negative (食べませんでした),
 - [x] Te (食べて) form,
 - [x] Present continuous informal (食べている),
-- [x] Present continuous informal negative (食べていない),
+- [ ] Present continuous informal negative (食べていない),
 - [x] Present continuous formal (食べています),
-- [x] Present continuous formal negative (食べていません),
-- [ ] Present continuous informal (食べていた),
-- [ ] Present continuous informal negative (),
-- [ ] Present continuous formal (食べていました),
-- [ ] Present continuous formal negative (食べていませんでした),
+- [ ] Present continuous formal negative (食べていません),
+- [ ] Past continuous informal (食べていた),
+- [ ] Past continuous informal negative (),
+- [ ] Past continuous formal (食べていました),
+- [ ] Past continuous formal negative (食べていませんでした),
