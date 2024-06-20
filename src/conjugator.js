@@ -68,7 +68,7 @@ export const te = (verb) => {
 }
 
 export const volitional = (verb) => {
-  if (verb.endsWith("する")) return verb.replace("する", "しよう or ぞう")
+  if (verb.endsWith("する")) return verb.replace("する", "しよう")
   const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Volitional, negative: false, polite: false })
   return kanji
 }
@@ -76,6 +76,12 @@ export const volitional = (verb) => {
 export const volitionalFormal = (verb) => {
   if (verb.endsWith("する")) return verb.replace("する", "しましょう")
   const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Volitional, negative: false, polite: true })
+  return kanji
+}
+
+export const imperative = (verb) => {
+  if (verb.endsWith("する")) return verb.replace("する", "しろ")
+  const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Imperative, negative: false, polite: false })
   return kanji
 }
 
@@ -100,6 +106,7 @@ export const FORMS = [
   { name: "Present Continuous - formal", conjugator: continuousFormal },
   { name: "Volitional (lets...) - informal", conjugator: volitional },
   { name: "Volitional (lets...) - formal", conjugator: volitionalFormal },
+  { name: "Imperative - informal", conjugator: imperative },
 ]
 
 
