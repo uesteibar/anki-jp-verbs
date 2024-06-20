@@ -67,6 +67,18 @@ export const te = (verb) => {
   return kanji
 }
 
+export const volitional = (verb) => {
+  if (verb.endsWith("する")) return verb.replace("する", "しよう or ぞう")
+  const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Volitional, negative: false, polite: false })
+  return kanji
+}
+
+export const volitionalFormal = (verb) => {
+  if (verb.endsWith("する")) return verb.replace("する", "しましょう")
+  const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Volitional, negative: false, polite: true })
+  return kanji
+}
+
 export const continuous = (verb) => {
   return te(verb) + "いる"
 }
@@ -75,16 +87,21 @@ export const continuousFormal = (verb) => {
   return te(verb) + presentFormal("いる")
 }
 
-export const PRESENT_FORMAL = { name: "Present - formal", conjugator: presentFormal }
-export const NEGATIVE = { name: "Present Negative - informal", conjugator: negative }
-export const PAST = { name: "Past - informal", conjugator: past }
-export const PAST_NEGATIVE = { name: "Past Negative - informal", conjugator: pastNegative }
-export const NEGATIVE_FORMAL = { name: "Present Negative - formal", conjugator: negativeFormal }
-export const PAST_FORMAL = { name: "Past - formal", conjugator: pastFormal }
-export const PAST_NEGATIVE_FORMAL = { name: "Past Negative - formal", conjugator: pastNegativeFormal }
-export const TE = { name: "Te Form", conjugator: te }
-export const CONTINUOUS = { name: "Present Continuous - informal", conjugator: continuous }
-export const CONTINUOUS_FORMAL = { name: "Present Continuous - formal", conjugator: continuousFormal }
+export const FORMS = [
+  { name: "Present - formal", conjugator: presentFormal },
+  { name: "Present Negative - informal", conjugator: negative },
+  { name: "Past - informal", conjugator: past },
+  { name: "Past Negative - informal", conjugator: pastNegative },
+  { name: "Present Negative - formal", conjugator: negativeFormal },
+  { name: "Past - formal", conjugator: pastFormal },
+  { name: "Past Negative - formal", conjugator: pastNegativeFormal },
+  { name: "Te Form", conjugator: te },
+  { name: "Present Continuous - informal", conjugator: continuous },
+  { name: "Present Continuous - formal", conjugator: continuousFormal },
+  { name: "Volitional (lets...) - informal", conjugator: volitional },
+  { name: "Volitional (lets...) - formal", conjugator: volitionalFormal },
+]
+
 
 export const permutate = async (verbs, conjugations) => {
   const kuroshiro = new Kuroshiro();
