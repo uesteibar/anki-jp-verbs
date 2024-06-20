@@ -85,6 +85,12 @@ export const imperative = (verb) => {
   return kanji
 }
 
+export const tai = (verb) => {
+  if (verb.endsWith("する")) return verb.replace("する", "したい")
+  const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Tai, negative: false, polite: false })
+  return kanji
+}
+
 export const continuous = (verb) => {
   return te(verb) + "いる"
 }
@@ -107,6 +113,7 @@ export const FORMS = [
   { name: "Volitional (lets...) - informal", conjugator: volitional },
   { name: "Volitional (lets...) - formal", conjugator: volitionalFormal },
   { name: "Imperative - informal", conjugator: imperative },
+  { name: "Tai (I want to) - informal", conjugator: tai },
 ]
 
 
