@@ -49,6 +49,11 @@ const verbs = `
 持つ
 死ぬ
 生きる
+忘れる
+降りる
+できる
+切る
+要る
 `.split("\n").map(w => w.trim()).filter(w => w != "")
 
 const jmdictPromise = setupJmdict('my-jmdict-simplified-db', 'data/jmdict-eng-3.5.0.json')
