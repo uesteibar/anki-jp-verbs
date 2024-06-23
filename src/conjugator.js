@@ -38,13 +38,13 @@ export const past = (verb) => {
 }
 
 export const pastNegative = (verb) => {
-  if (verb.endsWith("する")) return verb.replace("する", "しません")
+  if (verb.endsWith("する")) return verb.replace("する", "しなかった")
   const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Past, negative: true })
   return kanji
 }
 
 export const negativeFormal = (verb) => {
-  if (verb.endsWith("する")) return verb.replace("する", "しなかった")
+  if (verb.endsWith("する")) return verb.replace("する", "しません")
   const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Present, negative: true, polite: true })
   return kanji
 }
