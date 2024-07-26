@@ -67,6 +67,12 @@ export const te = (verb) => {
   return kanji
 }
 
+export const negativeTe = (verb) => {
+  if (verb.endsWith("する")) return verb.replace("する", "しないで")
+  const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Te, negative: true, polite: false })
+  return kanji
+}
+
 export const volitional = (verb) => {
   if (verb.endsWith("する")) return verb.replace("する", "しよう")
   const { kanji } = getVerbConjugation({ verb: {kanji: verb}, type: vtype(verb) }, { formName: FormName.Volitional, negative: false, polite: false })
@@ -108,6 +114,7 @@ export const FORMS = [
   { name: "Past - formal", conjugator: pastFormal },
   { name: "Past Negative - formal", conjugator: pastNegativeFormal },
   { name: "Te Form", conjugator: te },
+  { name: "Te Form Negative", conjugator: negativeTe },
   { name: "Present Continuous - informal", conjugator: continuous },
   { name: "Present Continuous - formal", conjugator: continuousFormal },
   { name: "Volitional (lets...) - informal", conjugator: volitional },
